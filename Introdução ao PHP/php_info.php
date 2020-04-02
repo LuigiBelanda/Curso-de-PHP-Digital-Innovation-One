@@ -1,5 +1,5 @@
 <?php
 
-    phpinfo(); //mostra diversas informaçoes sobre o versão do php, SO da máquina etc.
+    phpinfo(); //mostra diversas informaçoes sobre a versão do php, SO da máquina etc.
 
 ?>
