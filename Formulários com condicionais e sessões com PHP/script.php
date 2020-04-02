@@ -5,6 +5,8 @@
     // categoria infantil, de 13 a 18 categoria adolescente, acima de 18 categoria adulto, o sistea deverá retornar a 
     // categoria para cada nadador que for cadastrado
 
+    session_start();
+
     $categorias = []; // criando um array vazio para armazenar as categorias
 
     // categorias do projeto criadas e colocadas no array
@@ -25,32 +27,32 @@
 
     // função empty() verifica se a a varival está vazia ou não, nesse caso estamos verificando a var $nome
     if (empty($nome)){
-        echo 'O nome não pode ser vazio';
-        return;
+        $_SESSION['mensagem de erro'] = 'O nome não pode ser vazio, por favor preencha-o novamente';
+        header('location: index2.php');
     }
-    // acima verificamos se o usuário digitou ou não seu nome
+    // acima verificamos se o usuário digitou ou não seu nome, caso não tenha digitado seremos redirecionados para a página inicial
 
     // a função strlen() conta a quantidade de caracteres que a string tem, nessa caso o a var $nome
     if (strlen($nome) < 3){
-        echo 'O nome deve conter mais de 3 caracteres';
-        return;
+        $_SESSION['mensagem de erro'] = 'O nome não pode conter menos de 3 caracteres';
+        header('location: index2.php');
     }
-    // acima verificamos se o nome colocado pelo usuário é valido
+    // acima verificamos se o nome colocado pelo usuário é valido, caso não for seremos redirecionados para a página inicial
 
     if (strlen($nome) > 40){
-        echo 'O nome é muito extenso';
-        return;
+        $_SESSION['mensagem de erro'] = 'O nome não pode ter mais de 40 caracteres';
+        header('location: index2.php');
     }
     // acima verificamos se o nome do usuário não é muito extenso, no caso se o nome digitado passe de 40 carecteres
-    // ele entrara no trecho de codigo acima
+    // ele entrara no trecho de codigo acima e nesse caso seremos redirecionados para a página inicial
 
     // a função is_numeric verifica se o dado que estamos recebendo é numerico 
     if (!is_numeric($idade)){
-        echo 'Informe um número para a idade';
-        return;
+        $_SESSION['mensagem de erro'] = 'Informe um número para idade';
+        header('location: index2.php');
     }
     // caso a varivel $idade não for numerica (isso por causa do ponto de exclamação antes da função !is_numeric)
-    //  ele entrara no trecho de codigo acima
+    //  ele entrara no trecho de codigo acima e nesse caso seremos redirecionados para a página inicial
 
     if ($idade >= 6 && $idade <= 12) { // se idade for maior ou igual a 6 e tambem seja menor ou igual a 12 ele continua esse bloco
        for ($i = 0; $i <= count($categorias); $i++) { 
