@@ -15,7 +15,7 @@
             if ($idade >= 6 && $idade <= 12) { 
                 for ($i = 0; $i <= count($categorias); $i++) { 
                     if ($categorias[$i] == 'infantil') {
-                       setarMensagemSucesso(mensagem: "O nadador ".$nome. " compete na categoria infantil");
+                       setarMensagemSucesso("O nadador ".$nome. " compete na categoria infantil");
                        return null;
                     }
                 }
@@ -24,7 +24,7 @@
              else if ($idade >= 13 && $idade < 18) { 
                  for ($i = 0; $i <= count($categorias); $i++) { 
                      if ($categorias[$i] == 'adolescente') {
-                       setarMensagemSucesso(mensagem: "O nadador " .$nome. " compete na categoria adolescente");
+                       setarMensagemSucesso("O nadador " .$nome. " compete na categoria adolescente");
                        return null;
                      }
                  }
@@ -33,7 +33,7 @@
              else {
                  for ($i = 0; $i <= count($categorias); $i++) { 
                      if ($categorias[$i] == 'adulto') {
-                         setarMensagemSucesso(mensagem: "O nadador " .$nome. " compete na categoria adulto");
+                         setarMensagemSucesso("O nadador " .$nome. " compete na categoria adulto");
                          return null;
                      }
                  }
